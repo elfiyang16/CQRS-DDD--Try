@@ -9,7 +9,7 @@ from bank_co.repository import AccountRepo, CustomerRepo, BankRepo
 """
 Command -- Aggregate Root 
 1 --- 1 
-use DTO to move data around
+use DTO to move data around (input)
 Entity independent of Repo, and vice versa
 Repo is simply lifting the data access burden away from Entity
 it's for storing and fetching data
@@ -23,6 +23,7 @@ class Command(ABC):
 
 
 class OpenAccount(Command):
+    # receive as DTO and spread it
     def __init__(self, request: OpenAccountDto) -> None:
         self._request = request
 

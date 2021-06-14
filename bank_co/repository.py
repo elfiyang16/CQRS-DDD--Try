@@ -12,7 +12,7 @@ bank_db: Dict[UUID, Aggregate] = {}
 class AccountRepo(object):
     @classmethod
     def save(cls, account: Account):
-        account_db[account.id] = account
+        account_db[account.id.value] = account
 
     @classmethod
     def find_by_id(cls, id: UUID):
@@ -22,7 +22,7 @@ class AccountRepo(object):
 class CustomerRepo(object):
     @classmethod
     def save(cls, customer: Customer):
-        customer_db[customer.id] = customer
+        customer_db[customer.id.value] = customer
 
     @classmethod
     def find_by_id(cls, id: UUID):
@@ -32,7 +32,7 @@ class CustomerRepo(object):
 class BankRepo(object):
     @classmethod
     def save(cls, bank: Bank):
-        bank_db[bank.id] = bank
+        bank_db[bank.id.value] = bank
 
     @classmethod
     def find_by_id(cls, id: UUID):

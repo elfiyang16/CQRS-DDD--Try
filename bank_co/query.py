@@ -4,6 +4,10 @@ from bank_co.repository import BankRepo, CustomerRepo, AccountRepo
 from bank_co.entity import Customer, Bank, Aggregate, Account
 from bank_co.value_object import UniqueId
 
+"""
+query goes into Repo to get the data directly from application layer
+"""
+
 
 class Query(ABC):
     @abstractmethod
